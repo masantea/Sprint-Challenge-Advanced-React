@@ -23,9 +23,29 @@ Commit your code regularly and meaningfully. This helps both you (in case you ev
 Demonstrate your understanding of this Sprint's concepts by answering the following free-form questions. Edit the `ANSWERS.md` file to include your answers after each question. Make sure to leave a blank line above and below your answer so it is clear and easy to read by your project manager.
 
 - [ ] Why would you use class component over function components (removing hooks from the question)?
+
+With class components you can use setState which make sit easier to handle user input and easier code organization, 
+
+
+
 - [ ] Name three lifecycle methods and their purposes.
+
+componentWillUnmount() is invoked immediately before a component is unmounted and destroyed. Perform any necessary cleanup in this method, such as invalidating timers, canceling network requests, or cleaning up any subscriptions that were created in componentDidMount()
+
+componentDidUpdate() is invoked immediately after updating occurs. This method is not called for the initial render.
+Use this as an opportunity to operate on the DOM when the component has been updated. This is also a good place to do network requests as long as you compare the current props to previous props (e.g. a network request may not be necessary if the props have not changed)
+
+componentDidMount() is invoked immediately after a component is mounted (inserted into the tree). Initialization that requires DOM nodes should go here. If you need to load data from a remote endpoint, this is a good place to instantiate the network request.
+This method is a good place to set up any subscriptions. If you do that, don’t forget to unsubscribe in componentWillUnmount().
+
+
+
 - [ ] What is the purpose of a custom hook?
+Custom hooks are cutomized hooks that are are built to apply non-visual behavior and stateful logic throught out components. This way it can be reused. It can be used to manage event listeners or watching for key presses.
+
+
 - [ ] Why is it important to test our apps?
+this is to minimize the risk of bugs finding their way into production code, it allows you yo trust the code, and acts as a safety net when making changes or refactoring. 
 
 ## Project Set Up
 
