@@ -19,10 +19,10 @@ it('renders "womens world cup"', () => {
 
 });
 
-it('gets by testid', () => {
-  const {getByTestId} =  render(<App/>);
+// it('gets by testid', () => {
+//   const {getByTestId} =  render(<App/>);
 
-  expect getByTestId(/app/i).toBeInTheDocument()
+//   expect getByTestId(/app/i).toBeInTheDocument()
 
-});
+// });
 
