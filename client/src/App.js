@@ -1,40 +1,36 @@
-import React from 'react';
-import axios from 'axios';
-import './App.css';
+import React from "react";
+import axios from "axios";
+import "./App.css";
 
-import PlayerList from './components/PlayerList';
+import PlayerList from "./components/PlayerList";
 
-class App extends React.Component{
+class App extends React.Component {
+  constructor() {
+    super();
 
-  constructor(){
-    super()
-
-    this.state ={
-
-      players: []
-
-    }
+    this.state = {
+      players: [],
+    };
   }
 
-  componentDidMount(){
+  componentDidMount() {
     axios
-    .get(`http://localhost:5000/api/players`)
-    .then(res => this.setState({...this.state, players:res.data}))
-    .catch(err => console.log(err))
-    
+      .get(`http://localhost:5000/api/players`)
+      .then((res) => this.setState({ ...this.state, players: res.data }))
+      .catch((err) => console.log(err));
   }
 
-  render (){
-    console.log(this.state)
+  render() {
+    console.log(this.state.players);
 
-  return (
-    <div>
+    return (
+      <div className="App">
+        <h1>Women's World Cup</h1>
 
-      <PlayerList/>
-    
-    </div>
-  );
-}
+        <PlayerList playerFromState={this.state.players} />
+      </div>
+    );
+  }
 }
 
 export default App;
