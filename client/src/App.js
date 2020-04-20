@@ -51,8 +51,8 @@ class App extends React.Component {
     console.log('state in app', this.state.players)
 
     return (
-      <div className="App">
-        <h1>Women's World Cup</h1>
+      <div data-testid = "app" className="App">
+        <h1>Womens World Cup</h1>
 
         <PlayerList playerFromState={this.state.players} />
       </div>
