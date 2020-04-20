@@ -2,6 +2,8 @@ import React from 'react';
 import axios from 'axios';
 import './App.css';
 
+import PlayerList from './components/PlayerList';
+
 class App extends React.Component{
 
   constructor(){
@@ -17,7 +19,7 @@ class App extends React.Component{
   componentDidMount(){
     axios
     .get(`http://localhost:5000/api/players`)
-    .then(res => console.log({...this.state, players:res.data}))
+    .then(res => this.setState({...this.state, players:res.data}))
     .catch(err => console.log(err))
     
   }
@@ -26,7 +28,9 @@ class App extends React.Component{
     console.log(this.state)
 
   return (
-    <div className="App">
+    <div>
+
+      <PlayerList/>
     
     </div>
   );
