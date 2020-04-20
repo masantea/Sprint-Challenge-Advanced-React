@@ -10,7 +10,7 @@ class PlayerList extends React.Component {
   render() {
     return (
       <div>
-        {this.props.playerFromState.map((player) => (
+        {this.props.playerFromState && this.props.playerFromState.map((player) => (
           <Player
             name={player.name}
             country={player.country}
